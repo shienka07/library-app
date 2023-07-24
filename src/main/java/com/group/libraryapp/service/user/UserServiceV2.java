@@ -23,7 +23,7 @@ public class UserServiceV2 {
         userRepository.save(new User(request.getName(), request.getAge()));
     }
 
-    public List<UserResponse> getUser(){
+    public List<UserResponse> getUsers(){
 
         return userRepository.findAll().stream()
                 .map(UserResponse::new)
@@ -40,6 +40,14 @@ public class UserServiceV2 {
     }
 
 
+    public void deleteUser(String name){
+        User user = userRepository.findByName(name);
+        if(user == null){
+            throw new IllegalArgumentException();
+        }
+
+        userRepository.delete(user);
+    }
 }
 
 

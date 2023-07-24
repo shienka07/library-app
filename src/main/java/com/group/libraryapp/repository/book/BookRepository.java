@@ -1,6 +1,6 @@
-package com.group.libraryapp.repository.book;
-
-public interface BookRepository {
-
-    void saveBook();
-}
+//package com.group.libraryapp.repository.book;
+//
+//public interface BookRepository {
+//
+//    void saveBook();
+//}
